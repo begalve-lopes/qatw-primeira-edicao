@@ -2,10 +2,9 @@ pipeline {
     agent {
         docker {
             image 'mcr.microsoft.com/playwright:v1.60.0-noble'
-            args '-u root:root'
+            args '--network qatw-primeira-edicao_skynet'
         }
     }
-
     stages {
         stage('Install Dependencies') {
             steps {
