@@ -1,12 +1,8 @@
 pipeline {
     agent {
-        docker {
+        dockerContainer {
             image 'mcr.microsoft.com/playwright:v1.60.0-noble'
         }
-    }
-
-    options {
-        timeout(time: 20, unit: 'MINUTES')
     }
 
     stages {
