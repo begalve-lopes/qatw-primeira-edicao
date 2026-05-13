@@ -2,7 +2,6 @@ pipeline {
     agent {
         dockerContainer {
             image 'mcr.microsoft.com/playwright:v1.60.0-noble'
-            args '--network qatw-primeira-edicao_skynet'
         }
     }
 
