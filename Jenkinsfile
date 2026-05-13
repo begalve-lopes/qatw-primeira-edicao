@@ -1,16 +1,19 @@
 pipeline {
     agent {
-        docker {
+        dockerContainer {
             image 'mcr.microsoft.com/playwright:v1.60.0-noble'
             args '--network qatw-primeira-edicao_skynet'
         }
     }
+
     stages {
+
         stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
         }
+
         stage('E2E Tests') {
             steps {
                 sh 'npx playwright test'
